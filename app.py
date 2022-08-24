@@ -39,24 +39,20 @@ db_fruits = client['Fruits']
 collection_fruits = db_fruits['Most_sold']
 collection_fruits_2 = db_fruits['Least_sold']
 
+all_collections = [collection_clothes, collection_clothes_2, collection_fruits, collection_fruits_2]
+
 def main():
     for _ in range(randint(25, 50)):
-        record = record_creator()
-        collection_clothes.insert_one(record)
+        collection_clothes.insert_one(record_creator())
 
     for _ in range(randint(25, 50)):
-        record = record_creator()
-        collection_clothes_2.insert_one(record)
+        collection_clothes_2.insert_one(record_creator())
 
     for _ in range(randint(25, 50)):
-        record = record_creator()
-        collection_fruits.insert_one(record)
+        collection_fruits.insert_one(record_creator())
 
     for _ in range(randint(25, 50)):
-        record = record_creator()
-        collection_fruits_2.insert_one(record)
-
-all_collections = [collection_clothes, collection_clothes_2, collection_fruits, collection_fruits_2]
+        collection_fruits_2.insert_one(record_creator())
 
 def collection_item_count(selected_collection: Collection) -> None:
         return f"{len([x for x in selected_collection.find()])}"
@@ -93,6 +89,8 @@ def write_information_to_file(data: str) -> None:
     with open("collection_report.txt", 'a') as f:
         f.write(data)
 
+main()
+
 write_information_to_file(f"""Information date: {datetime.now()}
 
 Collection Clothes most sold item count: {collection_item_count(collection_clothes)} 
@@ -124,3 +122,4 @@ Collection Fruits least sold item count: {collection_item_count(collection_fruit
 {lightest_item_price(collection_fruits_2)}
 
 {all_value()}\n\n\n""")
+
