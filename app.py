@@ -82,7 +82,7 @@ def all_value() -> float:
     for collection in all_collections:
         result = sum([item['cost'] for item in [x for x in collection.find()]])
         overall_value = overall_value + result
-    return f"Overall collection value ${round(overall_value, 2)}"
+    return f"Overall collection value: ${round(overall_value, 2)}"
 
 def write_information_to_file(data: str) -> None:
     with open("collection_report.txt", 'a') as f:
