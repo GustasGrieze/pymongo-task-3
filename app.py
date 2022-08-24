@@ -29,7 +29,6 @@ def record_creator() -> dict:
     record = {'brand': name, 'weight': weight, 'cost': cost, 'size': size, 'color': color}
     return record
 
-
 client = MongoClient('localhost', 37017)
 db_clothes = client['Clothes']
 collection_clothes = db_clothes['Most_sold']
@@ -63,28 +62,23 @@ def collection_item_count(selected_collection: Collection) -> None:
         return f"{len([x for x in selected_collection.find()])}"
 
 def average_item_price(selected_collection: Collection) -> None:
-        my_list = [x for x in selected_collection.find()]
-        result = [item['cost'] for item in my_list]
+        result = [item['cost'] for item in [x for x in selected_collection.find()]]
         return f"Collection average item price: ${round(mean(result), 2)}"
 
 def most_expensive_item_price(selected_collection: Collection) -> None:
-        my_list = [x for x in selected_collection.find()]
-        result = max([item['cost'] for item in my_list])
+        result = max([item['cost'] for item in [x for x in selected_collection.find()]])
         return f"Collection most expensive item: ${result}"
 
 def cheapest_item_price(selected_collection: Collection) -> None:
-        my_list = [x for x in selected_collection.find()]
-        result = min([item['cost'] for item in my_list])
+        result = min([item['cost'] for item in [x for x in selected_collection.find()]])
         return f"Collection cheapest item: ${result}"
 
 def heaviest_item_price(selected_collection: Collection) -> None:
-        my_list = [x for x in selected_collection.find()]
-        result = max([item['weight'] for item in my_list])
+        result = max([item['weight'] for item in [x for x in selected_collection.find()]])
         return f"Collection heaviest item: {result}kg"
 
 def lightest_item_price(selected_collection: Collection) -> None:
-        my_list = [x for x in selected_collection.find()]
-        result = min([item['weight'] for item in my_list])
+        result = min([item['weight'] for item in [x for x in selected_collection.find()]])
         return f"Collection lightest item: {result}kg"
 
 def all_value() -> float:
