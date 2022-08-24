@@ -80,8 +80,7 @@ def lightest_item_price(selected_collection: Collection) -> None:
 def all_value() -> float:
     overall_value = 0
     for collection in all_collections:
-        my_list = [x for x in collection.find()]
-        result = sum([item['cost'] for item in my_list])
+        result = sum([item['cost'] for item in [x for x in collection.find()]])
         overall_value = overall_value + result
     return f"Overall collection value ${round(overall_value, 2)}"
 
