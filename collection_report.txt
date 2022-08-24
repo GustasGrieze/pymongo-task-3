@@ -1,0 +1,33 @@
+Information date: 2022-08-24 20:22:23.941030
+
+Collection Clothes most sold item count: 37 
+Collection average item price: $52.86
+Collection most expensive item: $97.39
+Collection cheapest item: $11.33
+Collection heaviest item: 99.64kg
+Collection lightest item: 10.16kg
+
+Collection Clothes least sold item count: 50 
+Collection average item price: $57.48
+Collection most expensive item: $98.22
+Collection cheapest item: $11.0
+Collection heaviest item: 99.13kg
+Collection lightest item: 11.55kg
+
+Collection Fruits most sold item count: 50 
+Collection average item price: $52.96
+Collection most expensive item: $98.7
+Collection cheapest item: $10.87
+Collection heaviest item: 99.71kg
+Collection lightest item: 10.98kg
+
+Collection Fruits least sold item count: 41 
+Collection average item price: $53.57
+Collection most expensive item: $94.94
+Collection cheapest item: $10.16
+Collection heaviest item: 97.92kg
+Collection lightest item: 15.02kg
+
+Overall collection value $9674.23
+
+
